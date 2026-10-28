@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ycmmm-hub.github.io/pubrescue/sitemap.xml

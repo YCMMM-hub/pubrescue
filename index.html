@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Publisher (.pub) files without Publisher — free PDF converter | PubRescue</title>
+<meta name="description" content="Open old Microsoft Publisher (.pub) files without Publisher. Convert them to PDF in your browser — your files stay on your device. Free for single files, €9 one-time for whole folders.">
+<link rel="canonical" href="https://ycmmm-hub.github.io/pubrescue/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="stylesheet" href="css/app.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PubRescue","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser (ChromeOS, Windows, macOS, Linux)","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Convert one .pub file at a time to PDF"},{"@type":"Offer","price":"9","priceCurrency":"EUR","description":"Batch Pass: whole folders to a ZIP of PDFs"}]}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <strong class="logo">PubRescue</strong>
+    <nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Open old Publisher (.pub) files without Microsoft Publisher</h1>
+    <p class="lead">Convert your .pub files to PDF directly in your browser.</p>
+    <ul class="promises">
+      <li><b>Your files stay on your device</b> — nothing is uploaded.</li>
+      <li><b>Free</b> for one file at a time. No account, no watermark.</li>
+      <li><b>Whole folders: <span class="price-copy">€9</span> once</b> — every file converted into one ZIP.</li>
+    </ul>
+  </section>
+
+  <section id="tool" class="tool" aria-label="Converter">
+    <label id="drop" class="drop" for="pick">
+      <span class="drop-title">Drop a .pub file here</span>
+      <span class="drop-sub">or click to choose — the PDF is ready in about a second</span>
+      <input id="pick" type="file" accept=".pub" multiple hidden>
+    </label>
+    <div class="tool-actions">
+      <label class="btn ghost">Choose a whole folder<input id="pick-folder" type="file" webkitdirectory multiple hidden></label>
+      <button id="unlock-all" class="btn" hidden>Convert all — Batch Pass</button>
+      <button id="download-all" class="btn" hidden>Download all as ZIP</button>
+    </div>
+    <p id="summary" class="summary" aria-live="polite"></p>
+    <p id="skipped" class="summary"></p>
+    <ul id="files" class="files"></ul>
+    <p id="license-state" class="ok-msg"></p>
+  </section>
+
+  <section class="why">
+    <h2>Why now?</h2>
+    <p>Microsoft removed Publisher from Microsoft 365 on <b>October 1, 2026</b>; support for the last boxed version ends on <b>October 13, 2026</b>. Subscribers can no longer open their .pub files — and Chromebooks and Macs never could. Years of newsletters, bulletins, flyers and brochures need a new home.</p>
+  </section>
+
+  <section id="how" class="how">
+    <h2>How it works</h2>
+    <div class="example">
+      <ol class="steps">
+        <li><b>Drop</b> a .pub file (or a whole folder with the Batch Pass).</li>
+        <li><b>Wait a second</b> — the file is read and laid out as a PDF inside your browser.</li>
+        <li><b>Download</b> the PDF. Print it, share it, or import it into Word or Canva to edit.</li>
+      </ol>
+      <figure>
+        <img src="img/example-result.png" width="402" height="520" alt="Example PDF produced by PubRescue: a school newsletter with a coloured banner, two columns of text and a highlighted box">
+        <figcaption>Sample newsletter laid out by PubRescue’s PDF engine: banner, columns, colours and text styles are kept.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="specs">
+    <h2>What is converted</h2>
+    <ul>
+      <li><b>Publisher versions:</b> files from Publisher 98 and 2000, and from Publisher 2002 to 2021 / Microsoft 365 (all use the same file format since 2002). Publisher 97 and older have not been tested.</li>
+      <li><b>Kept:</b> text, sizes, bold/italic/underline, alignment, tables, shapes, colours, pictures (PNG, JPEG, BMP, GIF and Windows clip art/border art), several pages.</li>
+      <li><b>Approximated:</b> fonts are replaced by standard fonts of the same size and style; some advanced drawings (EMF+) and rotated items may not appear.</li>
+      <li><b>Tested on real files:</b> 14 of 15 real-world publications collected from a public bug tracker opened correctly. Files that cannot be read show a clear message — and Batch Pass buyers get a refund.</li>
+      <li><b>Works on:</b> Chrome, Edge, Firefox and Safari on Chromebook, Windows, Mac and Linux. Installable on Chromebook and Windows, where it appears in "Open with" for .pub files. Works offline once loaded.</li>
+    </ul>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <h2>Pricing</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <p class="amount">€0</p>
+        <ul><li>One file at a time, as often as you like</li><li>Full-quality PDF</li><li>No watermark, no account</li></ul>
+      </div>
+      <div class="plan featured">
+        <h3>Batch Pass</h3>
+        <p class="amount"><span class="price-copy">€9</span> <small>one-time</small></p>
+        <ul><li>Whole folders in one go</li><li>One ZIP, sub-folders kept</li><li>Lifetime, no subscription</li><li>30-day refund, no questions</li></ul>
+        <a id="buy" class="btn" href="#" target="_blank" rel="noopener">Buy the Batch Pass</a>
+        <button id="have-code" class="link">I already have a code</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Questions</h2>
+    <details open><summary>Are my files uploaded anywhere?</summary><p>No. Your Publisher files never leave your device: the conversion runs inside your browser. Safe for school, parish, club, council and business documents.</p></details>
+    <details><summary>Can I try before paying?</summary><p>Yes — convert as many single files as you want for free. The Batch Pass only saves you from doing them one by one.</p></details>
+    <details><summary>A file failed — what now?</summary><p>Some damaged or unusual files cannot be read yet. If you bought the Batch Pass and it does not work for your files, you get a full refund.</p></details>
+    <details><summary>Can I edit the result?</summary><p>The PDF keeps your layout for reading, printing and archiving. To edit, open the PDF in Word, or import it into Canva or Google Docs.</p></details>
+    <details><summary>Does it work on a Chromebook?</summary><p>Yes. In Chrome, click the install icon in the address bar: PubRescue then appears in "Open with" for .pub files in the Files app.</p></details>
+    <details><summary>I lost my activation code</summary><p>Write to support with the e-mail used for payment and we send it again.</p></details>
+    <details><summary>Refund policy</summary><p>Full refund within 30 days of purchase, for any reason — reply to your Stripe receipt or write to support.</p></details>
+  </section>
+
+  <section class="guides">
+    <h2>Guides</h2>
+    <ul>
+      <li><a href="microsoft-publisher-discontinued.html">Microsoft Publisher is discontinued: what to do with your .pub files</a></li>
+      <li><a href="open-pub-file-on-chromebook.html">How to open a .pub file on a Chromebook</a></li>
+      <li><a href="open-pub-file-on-mac.html">How to open a .pub file on a Mac</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>PubRescue is not affiliated with Microsoft. Publisher is a trademark of Microsoft Corporation.</p>
+  <p>Support: <a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a> · <a href="legal.html">Legal notice, privacy &amp; terms</a> · <a href="third-party-notices.html">Open-source notices</a></p>
+</footer>
+
+<div id="paywall" class="modal" hidden>
+  <div class="card" role="dialog" aria-labelledby="pw-title">
+    <h2 id="pw-title">Convert whole folders at once</h2>
+    <p>The free version converts one file at a time. The <b>Batch Pass</b> converts every file you drop and gives you one ZIP with your folders kept — one payment, no subscription, 30-day refund.</p>
+    <a id="paywall-buy" class="btn" href="#" target="_blank" rel="noopener">Buy for <span class="price-copy">€9</span></a>
+    <form id="activate">
+      <label for="code">Already paid? Enter the activation code shown after payment:</label>
+      <div class="row"><input id="code" autocomplete="off" spellcheck="false" placeholder="PUBR-XXXX-XXXX"><button class="btn ghost" type="submit">Activate</button></div>
+      <p id="code-msg" class="code-msg" aria-live="polite"></p>
+    </form>
+    <button id="close-paywall" class="link">Not now</button>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
