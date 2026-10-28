@@ -2,7 +2,7 @@
 // (message de confirmation du Payment Link). L'app ne contient que son empreinte SHA-256.
 export const CONFIG = {
   // Lien Stripe Payment Link (à remplacer par le vrai lien, voir manual-actions.md)
-  checkoutUrl: 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK',
+  checkoutUrl: 'https://buy.stripe.com/fZu6oGcM3cBVaDCdLT4AU03',
   // SHA-256 du code d'activation (généré par tools/new-license-code.mjs)
   codeHashes: ['ea943d11a8e22e800c427ca10803acd61765ede3b0e08b14679d401efc58c6c8'],
   price: '€9',
