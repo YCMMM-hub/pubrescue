@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Open Publisher (.pub) files without Publisher — free PDF converter | PubRescue</title>
-<meta name="description" content="Open old Microsoft Publisher (.pub) files without Publisher. Convert them to PDF in your browser — your files stay on your device. Free for single files, €9 one-time for whole folders.">
+<meta name="description" content="Open old Microsoft Publisher (.pub) files without Publisher. Convert them to PDF in your browser — your files stay on your device. Free with a small footer line on each page; €9 one-time removes it and unlocks whole folders.">
 <link rel="canonical" href="https://ycmmm-hub.github.io/pubrescue/">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <meta name="theme-color" content="#1f5f8b">
 <link rel="stylesheet" href="css/app.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PubRescue","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser (ChromeOS, Windows, macOS, Linux)","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Convert one .pub file at a time to PDF"},{"@type":"Offer","price":"9","priceCurrency":"EUR","description":"Batch Pass: whole folders to a ZIP of PDFs"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PubRescue","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser (ChromeOS, Windows, macOS, Linux)","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Convert .pub files to PDF, free, with a small footer line on each page"},{"@type":"Offer","price":"9","priceCurrency":"EUR","description":"Batch Pass: whole folders to a ZIP of PDFs"}]}
 </script>
 </head>
 <body>
@@ -28,8 +28,8 @@
     <p class="lead">Convert your .pub files to PDF directly in your browser.</p>
     <ul class="promises">
       <li><b>Your files stay on your device</b> — nothing is uploaded.</li>
-      <li><b>Free</b> for one file at a time. No account, no watermark.</li>
-      <li><b>Whole folders: <span class="price-copy">€9</span> once</b> — every file converted into one ZIP.</li>
+      <li><b>Free</b> for any number of files. No account. Free PDFs carry a small footer line.</li>
+      <li><b>Remove the footer line: <span class="price-copy">€9</span> once</b> — and convert whole folders into one ZIP.</li>
     </ul>
   </section>
 
@@ -59,7 +59,7 @@
     <h2>How it works</h2>
     <div class="example">
       <ol class="steps">
-        <li><b>Drop</b> a .pub file (or a whole folder with the Batch Pass).</li>
+        <li><b>Drop</b> a .pub file (or a whole folder).</li>
         <li><b>Wait a second</b> — the file is read and laid out as a PDF inside your browser.</li>
         <li><b>Download</b> the PDF. Print it, share it, or import it into Word or Canva to edit.</li>
       </ol>
@@ -87,12 +87,12 @@
       <div class="plan">
         <h3>Free</h3>
         <p class="amount">€0</p>
-        <ul><li>One file at a time, as often as you like</li><li>Full-quality PDF</li><li>No watermark, no account</li></ul>
+        <ul><li>Any number of files, as often as you like</li><li>Full-quality PDF</li><li>A small footer line on each page, no account</li></ul>
       </div>
       <div class="plan featured">
         <h3>Batch Pass</h3>
         <p class="amount"><span class="price-copy">€9</span> <small>one-time</small></p>
-        <ul><li>Whole folders in one go</li><li>One ZIP, sub-folders kept</li><li>Lifetime, no subscription</li><li>30-day refund, no questions</li></ul>
+        <ul><li>No footer line on your PDFs</li><li>Whole folders in one go</li><li>One ZIP, sub-folders kept</li><li>Lifetime, no subscription</li><li>30-day refund, no questions</li></ul>
         <a id="buy" class="btn" href="#" target="_blank" rel="noopener">Buy the Batch Pass</a>
         <button id="have-code" class="link">I already have a code</button>
       </div>
@@ -102,7 +102,7 @@
   <section id="faq" class="faq">
     <h2>Questions</h2>
     <details open><summary>Are my files uploaded anywhere?</summary><p>No. Your Publisher files never leave your device: the conversion runs inside your browser. Safe for school, parish, club, council and business documents.</p></details>
-    <details><summary>Can I try before paying?</summary><p>Yes — convert as many single files as you want for free. The Batch Pass only saves you from doing them one by one.</p></details>
+    <details><summary>Can I try before paying?</summary><p>Yes — convert as many files as you want for free; each PDF carries a small footer line. The Batch Pass removes it and converts whole folders into one ZIP.</p></details>
     <details><summary>A file failed — what now?</summary><p>Some damaged or unusual files cannot be read yet. If you bought the Batch Pass and it does not work for your files, you get a full refund.</p></details>
     <details><summary>Can I edit the result?</summary><p>The PDF keeps your layout for reading, printing and archiving. To edit, open the PDF in Word, or import it into Canva or Google Docs.</p></details>
     <details><summary>Does it work on a Chromebook?</summary><p>Yes. In Chrome, click the install icon in the address bar: PubRescue then appears in "Open with" for .pub files in the Files app.</p></details>
@@ -132,8 +132,8 @@
 
 <div id="paywall" class="modal" hidden>
   <div class="card" role="dialog" aria-labelledby="pw-title">
-    <h2 id="pw-title">Convert whole folders at once</h2>
-    <p>The free version converts one file at a time. The <b>Batch Pass</b> converts every file you drop and gives you one ZIP with your folders kept — one payment, no subscription, 30-day refund.</p>
+    <h2 id="pw-title">Remove the footer line, convert whole folders</h2>
+    <p>The free version adds a small footer line to each page. The <b>Batch Pass</b> removes it, converts every file you drop and gives you one ZIP with your folders kept — one payment, no subscription, 30-day refund.</p>
     <a id="paywall-buy" class="btn" href="#" target="_blank" rel="noopener">Buy for <span class="price-copy">€9</span></a>
     <form id="activate">
       <label for="code">Already paid? Enter the activation code shown after payment:</label>

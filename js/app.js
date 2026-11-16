@@ -35,7 +35,7 @@ function addFiles(list) {
   for (const f of incoming) {
     const relPath = f.webkitRelativePath || f.name;
     if (state.files.some(x => x.relPath === relPath && x.size === f.size)) continue;
-    const status = state.licensed || freeSlot ? 'waiting' : 'locked';
+    const status = state.licensed || freeSlot || CONFIG.watermarkFree ? 'waiting' : 'locked';
     freeSlot = false;
     state.files.push({ file: f, name: f.name, relPath, size: f.size, status, pdf: null, note: status === 'locked' ? 'Included in the Batch Pass' : '' });
   }
@@ -53,7 +53,7 @@ async function convertOne(item) {
     const res = convertPub(state.engine, bytes);
     if (res.status === 'unsupported') throw new Error('Not a Publisher file, or a version we cannot read yet.');
     if (res.status !== 'ok') throw new Error('This file could not be read (damaged, or a layout we do not support yet).');
-    const { bytes: pdf, report } = await renderPdf(buildModel(res.events), { convertImage, title: baseName(item) });
+    const { bytes: pdf, report } = await renderPdf(buildModel(res.events), { convertImage, title: baseName(item), watermark: CONFIG.watermarkFree && !state.licensed ? CONFIG.watermarkText : '' });
     item.pdf = pdf;
     item.status = 'done';
     const notes = [`${report.pages} page${report.pages > 1 ? 's' : ''}`];

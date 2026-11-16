@@ -293,7 +293,7 @@ async function drawTable(page, t, pageH, fonts) {
   }
 }
 
-export async function renderPdf(model, { convertImage, title } = {}) {
+export async function renderPdf(model, { convertImage, title, watermark } = {}) {
   const report = { pages: model.pages.length, texts: 0, tables: 0, shapes: 0, images: 0, imagesSkipped: 0, charsReplaced: 0 };
   if (!model.pages.length) throw new Error('Aucune page trouvée dans ce fichier.');
   const doc = await PDFDocument.create();
@@ -315,6 +315,13 @@ export async function renderPdf(model, { convertImage, title } = {}) {
         const box = { x: it.x + pl, y: it.y + pt, w: it.w - pl - pr, h: it.h - pt - pb };
         drawLines(page, await layoutParas(it.paras, box.w, fonts), box, pg.h, it.valign);
       } else if (it.k === 'table') { report.tables++; await drawTable(page, it, pg.h, fonts); }
+    }
+  }
+  if (watermark) { // offre « filigrane » : une ligne discrète en bas de chaque page tant que le pass n'est pas activé
+    const wf = await doc.embedFont(StandardFonts.Helvetica);
+    for (const page of doc.getPages()) {
+      const { width } = page.getSize(); const size = Math.max(7, Math.min(10, width / 70)); const w = wf.widthOfTextAtSize(watermark, size);
+      page.drawText(watermark, { x: Math.max(8, (width - w) / 2), y: 8, size, font: wf, color: rgb(0.45, 0.45, 0.45), opacity: 0.85 });
     }
   }
   report.charsReplaced = fonts.replaced;

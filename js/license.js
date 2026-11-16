@@ -6,6 +6,9 @@ export const CONFIG = {
   // SHA-256 du code d'activation (généré par tools/new-license-code.mjs)
   codeHashes: ['ea943d11a8e22e800c427ca10803acd61765ede3b0e08b14679d401efc58c6c8'],
   price: '€9',
+  // Expérience « filigrane » (désactivée par défaut) : tout est converti gratuitement mais chaque page porte une ligne discrète ; le pass la retire.
+  watermarkFree: true,
+  watermarkText: 'Converted with PubRescue (free) - remove this line with the Pass: ycmmm-hub.github.io/pubrescue',
 };
 
 const KEY = 'pubrescue.license';
